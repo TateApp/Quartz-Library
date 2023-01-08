@@ -1,3 +1,4 @@
+import QuartzCore 
 import XCTest
 @testable import Quartz_Library
 
