@@ -1,3 +1,3 @@
 # Quartz Library
 
-A description of this package.
+Inspired By Flutter Engineering & SwiftUI
