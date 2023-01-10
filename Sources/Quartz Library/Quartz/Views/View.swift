@@ -77,9 +77,7 @@ public class View : UIView {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -161,9 +159,7 @@ public class Label : UILabel {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -245,9 +241,7 @@ public class ImageView : UIImageView {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -329,9 +323,7 @@ public class ProgressView : UIProgressView {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -416,9 +408,7 @@ public class Control : UIControl {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -500,9 +490,7 @@ public class Button : UIButton {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -584,9 +572,7 @@ public class SegmentedControl : UISegmentedControl {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -668,9 +654,7 @@ public class Stepper : UIStepper {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -752,9 +736,7 @@ public class Switch : UISwitch {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -836,9 +818,7 @@ public class Slider : UISlider {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -922,9 +902,7 @@ public class TextField : UITextField {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1006,9 +984,7 @@ public class TextView : UITextView {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1090,9 +1066,7 @@ public class SearchBar : UISearchBar {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1176,9 +1150,7 @@ public class ToolBar : UIToolbar {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1260,9 +1232,7 @@ public class TabBar : UITabBar {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1346,9 +1316,7 @@ public class NavigationBar : UINavigationBar {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1432,9 +1400,7 @@ public class Picker : UIPickerView {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
@@ -1516,9 +1482,7 @@ public class DatePicker : UIDatePicker {
         self.tag = 100
         
     }
-    override public func draw(_ rect: CGRect) {
-        
-    }
+    
     
     
     required init?(coder: NSCoder) {
