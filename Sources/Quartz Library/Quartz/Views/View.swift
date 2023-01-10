@@ -27,7 +27,7 @@ public class View : UIView {
     ) {
         
         super.init(frame: .zero)
-    
+        
         self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
@@ -112,6 +112,8 @@ public class Label : UILabel {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -194,6 +196,8 @@ public class ImageView : UIImageView {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -275,6 +279,8 @@ public class ProgressView : UIProgressView {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -361,6 +367,8 @@ public class Control : UIControl {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -442,6 +450,8 @@ public class Button : UIButton {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -525,6 +535,8 @@ public class SegmentedControl : UISegmentedControl {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -606,6 +618,8 @@ public class Stepper : UIStepper {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -689,6 +703,8 @@ public class Switch : UISwitch {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -770,6 +786,8 @@ public class Slider : UISlider {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -855,6 +873,8 @@ public class TextField : UITextField {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -937,6 +957,8 @@ public class TextView : UITextView {
         super.init(frame: .zero, textContainer: nil)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -1018,6 +1040,8 @@ public class SearchBar : UISearchBar {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -1103,6 +1127,8 @@ public class ToolBar : UIToolbar {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -1184,6 +1210,8 @@ public class TabBar : UITabBar {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
@@ -1269,6 +1297,8 @@ public class NavigationBar : UINavigationBar {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -1353,6 +1383,8 @@ public class Picker : UIPickerView {
         super.init(frame: .zero)
     
         
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
         if let theWidth = _width {
             
             self._width = theWidth
@@ -1434,6 +1466,8 @@ public class DatePicker : UIDatePicker {
         
         super.init(frame: .zero)
     
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
             
