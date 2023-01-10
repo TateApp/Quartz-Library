@@ -4,7 +4,7 @@ import UIKit
 
 
 
-class View : UIView {
+public class View : UIView {
     
     var widthConstraint = NSLayoutConstraint()
     var heightConstraint = NSLayoutConstraint()
@@ -12,7 +12,7 @@ class View : UIView {
     var _width : CGFloat = 0
     var _height : CGFloat = 0
     
-    init(
+    public init(
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
         _backgroundColor : UIColor? = nil,
