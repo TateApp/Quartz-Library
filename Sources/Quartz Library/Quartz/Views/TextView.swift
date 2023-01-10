@@ -72,7 +72,7 @@ public class TextView : UITextView {
         }
         
         
-        self.tag = 100
+        self.tag = 107
         
     }
     

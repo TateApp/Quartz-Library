@@ -72,7 +72,7 @@ public class Button : UIButton {
         }
         
         
-        self.tag = 100
+        self.tag = 102
         
     }
     

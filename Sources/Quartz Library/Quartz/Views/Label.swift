@@ -1,6 +1,7 @@
 import QuartzCore
  
 import UIKit
+
 public class Label : UILabel {
     
     var widthConstraint = NSLayoutConstraint()
@@ -71,7 +72,7 @@ public class Label : UILabel {
         }
         
         
-        self.tag = 101
+        self.tag = 104
         
     }
     

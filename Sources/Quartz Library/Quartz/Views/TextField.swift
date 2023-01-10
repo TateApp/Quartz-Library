@@ -72,7 +72,7 @@ public class TextField : UITextField {
         }
         
         
-        self.tag = 100
+        self.tag = 106
         
     }
     

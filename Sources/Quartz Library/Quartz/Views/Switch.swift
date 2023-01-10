@@ -72,7 +72,7 @@ public class Switch : UISwitch {
         }
         
         
-        self.tag = 100
+        self.tag = 108
         
     }
     

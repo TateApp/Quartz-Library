@@ -72,7 +72,7 @@ public class Control : UIControl {
         }
         
         
-        self.tag = 104
+        self.tag = 101
         
     }
     

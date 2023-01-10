@@ -72,7 +72,7 @@ public class ImageView : UIImageView {
         }
         
         
-        self.tag = 102
+        self.tag = 105
         
     }
     

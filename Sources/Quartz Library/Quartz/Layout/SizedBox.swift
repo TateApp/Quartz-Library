@@ -23,13 +23,8 @@ public class SizedBox : UIView {
         self.widthAnchor.constraint(equalToConstant: _width).isActive = true
         self.heightAnchor.constraint(equalToConstant: _height).isActive = true
         
-        self.layer.borderWidth = 1
-        
-        self.addSubview(label)
-        label.max()
-        label.text = "Sized Box"
-        label.textAlignment = .center
-        label.textColor = .black
+   
+  
         
         self.tag = 201
         
