@@ -9,7 +9,7 @@ public class SizedBox : UIView {
     
     var _width : CGFloat = 0
     var _height : CGFloat = 0
-    init(
+    public init(
         _width: CGFloat = 20,
         _height: CGFloat = 20
     ) {

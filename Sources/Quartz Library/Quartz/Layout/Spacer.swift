@@ -6,7 +6,7 @@ public class Spacer : UIView {
 
     let label = UILabel()
     
-    init() {
+    public init() {
         super.init(frame: .zero)
         
             self.translatesAutoresizingMaskIntoConstraints = false
