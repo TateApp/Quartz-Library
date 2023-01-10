@@ -25,7 +25,7 @@ public class VisualEffectView : UIVisualEffectView {
         _alpha: CGFloat? = 1.0
     ) {
         
-        super.init(frame: .zero)
+        super.init(effect: UIVisualEffect())
     
         
         if let theWidth = _width {
