@@ -32,18 +32,19 @@ public class View : UIView {
             self.translatesAutoresizingMaskIntoConstraints = false
             self._width = theWidth
             widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            
+            widthConstraint.isActive = true
         }
       
         if let theHeight = _height {
             self.translatesAutoresizingMaskIntoConstraints = false
             self._height = theHeight
             heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
+            heightConstraint.isActive = true
         }
       
       
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
+      
+        
         
         if let _backgroundColor = _backgroundColor {
             self.backgroundColor = _backgroundColor
