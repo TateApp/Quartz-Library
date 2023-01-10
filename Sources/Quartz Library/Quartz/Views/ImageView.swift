@@ -1,8 +1,8 @@
-import QuartzCore 
+import QuartzCore
  
 import UIKit
 
-public class View : UIView {
+public class ImageView : UIImageView {
     
     var widthConstraint = NSLayoutConstraint()
     var heightConstraint = NSLayoutConstraint()
@@ -24,6 +24,7 @@ public class View : UIView {
     ) {
         
         super.init(frame: .zero)
+    
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -71,7 +72,7 @@ public class View : UIView {
         }
         
         
-        self.tag = 100
+        self.tag = 102
         
     }
     
@@ -82,4 +83,3 @@ public class View : UIView {
     }
     
 }
-

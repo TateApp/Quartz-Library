@@ -1,8 +1,8 @@
-import QuartzCore 
+import QuartzCore
  
 import UIKit
 
-public class View : UIView {
+public class SearchBar : UISearchBar {
     
     var widthConstraint = NSLayoutConstraint()
     var heightConstraint = NSLayoutConstraint()
@@ -24,6 +24,7 @@ public class View : UIView {
     ) {
         
         super.init(frame: .zero)
+    
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -82,4 +83,3 @@ public class View : UIView {
     }
     
 }
-

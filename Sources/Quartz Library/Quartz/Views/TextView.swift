@@ -1,8 +1,8 @@
-import QuartzCore 
+import QuartzCore
  
 import UIKit
 
-public class View : UIView {
+public class TextView : UITextView {
     
     var widthConstraint = NSLayoutConstraint()
     var heightConstraint = NSLayoutConstraint()
@@ -23,7 +23,8 @@ public class View : UIView {
         _alpha: CGFloat? = 1.0
     ) {
         
-        super.init(frame: .zero)
+        super.init(frame: .zero, textContainer: nil)
+    
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -82,4 +83,3 @@ public class View : UIView {
     }
     
 }
-
