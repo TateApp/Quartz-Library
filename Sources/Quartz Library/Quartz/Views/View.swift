@@ -28,19 +28,20 @@ public class View : UIView {
         
         super.init(frame: .zero)
     
+        self.translatesAutoresizingMaskIntoConstraints = false
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -112,17 +113,17 @@ public class Label : UILabel {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -194,17 +195,17 @@ public class ImageView : UIImageView {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -276,17 +277,17 @@ public class ProgressView : UIProgressView {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -361,17 +362,17 @@ public class Control : UIControl {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -443,17 +444,17 @@ public class Button : UIButton {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -525,17 +526,17 @@ public class SegmentedControl : UISegmentedControl {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -607,17 +608,17 @@ public class Stepper : UIStepper {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -689,17 +690,17 @@ public class Switch : UISwitch {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -771,17 +772,17 @@ public class Slider : UISlider {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -855,17 +856,17 @@ public class TextField : UITextField {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -937,17 +938,17 @@ public class TextView : UITextView {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1019,17 +1020,17 @@ public class SearchBar : UISearchBar {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1103,17 +1104,17 @@ public class ToolBar : UIToolbar {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1185,17 +1186,17 @@ public class TabBar : UITabBar {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1269,17 +1270,17 @@ public class NavigationBar : UINavigationBar {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1353,17 +1354,17 @@ public class Picker : UIPickerView {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
@@ -1435,17 +1436,17 @@ public class DatePicker : UIDatePicker {
     
         
         if let theWidth = _width {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._width = theWidth
-            widthConstraint = self.widthAnchor.constraint(equalToConstant: theWidth)
-            widthConstraint.isActive = true
+            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
+            
         }
       
         if let theHeight = _height {
-            self.translatesAutoresizingMaskIntoConstraints = false
+            
             self._height = theHeight
-            heightConstraint = self.heightAnchor.constraint(equalToConstant: theHeight)
-            heightConstraint.isActive = true
+            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
+            
         }
       
       
