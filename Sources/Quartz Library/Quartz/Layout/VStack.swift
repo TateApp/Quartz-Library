@@ -10,10 +10,10 @@ public enum VStackType {
     case manual
 }
 public class VStack : UIStackView {
-    var views = [UIView]()
-    var type : VStackType = .equalSpacing
-    var _width : CGFloat? = nil
-    var _height : CGFloat? = nil
+    public var views = [UIView]()
+    public var type : VStackType = .equalSpacing
+    public var _width : CGFloat = 0
+    public var _height : CGFloat = 0
     
     
     public init(
@@ -32,11 +32,15 @@ public class VStack : UIStackView {
         
         if let width = _width {
             self._width = width
-            print("Width Set")
+            if Quartz.shared.mode == .developer {
+                print("Width Set")
+            }
         }
         if let height = _height {
             self._height = height
-            print("height Set")
+            if Quartz.shared.mode == .developer {
+                print("height Set")
+            }
         }
         self.distribution = .fillProportionally
         self.axis = .vertical
@@ -45,6 +49,29 @@ public class VStack : UIStackView {
         
         self.tag = 203
         
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        if self._width != 0 {
+            
+            self.widthAnchor.constraint(equalToConstant: self._width).isActive = true
+            
+        } else {
+            
+            self.widthAnchor.constraint(equalToConstant: self.getWidth(views: self.views)).isActive = true
+            
+        }
+      
+        if self._height != 0 {
+            
+            self.widthAnchor.constraint(equalToConstant: self._height).isActive = true
+            
+        } else {
+            
+            self.heightAnchor.constraint(equalToConstant: self.getHeight(views: self.views)).isActive = true
+            
+        }
         
             
         
@@ -66,27 +93,10 @@ public class VStack : UIStackView {
     public func setState() {
         
         if let superView = self.superview {
-            print("Set State")
-            if _width != nil || _height != nil {
-                
-                self.translatesAutoresizingMaskIntoConstraints = false
-                
-                if let width = _width {
-                    
-                    self.widthAnchor.constraint(equalToConstant: width).isActive = true
-                    
-                } else {
-                    print("Width is Nil")
-                }
-                
-                if let height = _height {
-                    
-                    self.heightAnchor.constraint(equalToConstant: height).isActive = true
-                    
-                } else {
-                    print("Height is Nil")
-                }
+            if Quartz.shared.mode == .developer {
+                print("Set State")
             }
+           
           
             
             if self.frame != .zero {
@@ -95,23 +105,25 @@ public class VStack : UIStackView {
             for arrangedSubView in self.arrangedSubviews {
                 self.removeArrangedSubview(arrangedSubView)
             }
-            
-                for view in self.views {
-                    view.layer.borderWidth = 1
-                }
-            print(self.views.count)
+        
                 
             switch type {
                 //MARK: -
             case .equalSpacing:
+                if Quartz.shared.mode == .developer {
+                    print("Here")
+                }
                 var sizedBoxHeight = self.VStackGetSizedBox(views: self.views)
             
-                print("SizedBox Height: \(sizedBoxHeight)")
+                if Quartz.shared.mode == .developer {
+                    print("SizedBox Height: \(sizedBoxHeight)")
+                }
+                
                 for index in 0...views.count - 1 {
-                    self.addArrangedSubview(SizedBox(_width: self.frame.width, _height: sizedBoxHeight))
+                    self.addArrangedSubview(StackSizedBox(_width: self.frame.width, _height: sizedBoxHeight))
                     self.addArrangedSubview(views[index])
                 }
-                self.addArrangedSubview(SizedBox(_width: self.frame.width,_height: sizedBoxHeight))
+                self.addArrangedSubview(StackSizedBox(_width: self.frame.width,_height: sizedBoxHeight))
                 //MARK: -
             case .pushUp:
                 var sizedBoxHeight = self.VStackGetPushHeight(views: self.views)
@@ -120,11 +132,11 @@ public class VStack : UIStackView {
                     self.addArrangedSubview(views[index])
                     
                 }
-                self.addArrangedSubview(SizedBox(_width: self.frame.width, _height: sizedBoxHeight))
+                self.addArrangedSubview(StackSizedBox(_width: self.frame.width, _height: sizedBoxHeight))
                 //MARK: -
             case .pushDown:
                 var sizedBoxHeight = self.VStackGetPushHeight(views: self.views)
-                self.addArrangedSubview(SizedBox(_width: self.frame.width, _height: sizedBoxHeight))
+                self.addArrangedSubview(StackSizedBox(_width: self.frame.width, _height: sizedBoxHeight))
                 for index in 0...views.count - 1 {
                   
                     self.addArrangedSubview(views[index])
@@ -159,7 +171,7 @@ public class VStack : UIStackView {
                     if self.getViewType(view: self.views[index]) != .Spacer {
                         self.addArrangedSubview(views[index])
                     } else {
-                        self.addArrangedSubview(SizedBox(_width: self.frame.width, _height: sizedBoxHeight))
+                        self.addArrangedSubview(StackSizedBox(_width: self.frame.width, _height: sizedBoxHeight))
                     }
                   
                     
@@ -180,6 +192,8 @@ public class VStack : UIStackView {
       
         
     }
+    
+    
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -4,13 +4,18 @@ import UIKit
 
 public class ImageView : UIImageView {
     
-    var widthConstraint = NSLayoutConstraint()
-    var heightConstraint = NSLayoutConstraint()
+    public var widthConstraint = NSLayoutConstraint()
+    public var heightConstraint = NSLayoutConstraint()
     
-    var _width : CGFloat = 0
-    var _height : CGFloat = 0
+    public var _width : CGFloat = 0
+    public var _height : CGFloat = 0
     
     public init(
+        
+        //MARK: - ImageView
+        image: UIImage? = nil,
+        contentMode: UIView.ContentMode? = nil,
+        //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
         _backgroundColor : UIColor? = nil,
@@ -25,6 +30,8 @@ public class ImageView : UIImageView {
         
         super.init(frame: .zero)
     
+    
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

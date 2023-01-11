@@ -4,13 +4,21 @@ import UIKit
 
 public class Button : UIButton {
     
-    var widthConstraint = NSLayoutConstraint()
-    var heightConstraint = NSLayoutConstraint()
+    public var widthConstraint = NSLayoutConstraint()
+    public var heightConstraint = NSLayoutConstraint()
     
-    var _width : CGFloat = 0
-    var _height : CGFloat = 0
+    public var _width : CGFloat = 0
+    public var _height : CGFloat = 0
     
     public init(
+     
+        //MARK: - Button
+        setTitle: String? = nil,
+        setTitleColor: UIColor? = nil,
+        setTitleShadowColor: UIColor? = nil,
+        setImage: UIImage? = nil,
+        
+        //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
         _backgroundColor : UIColor? = nil,
@@ -24,7 +32,20 @@ public class Button : UIButton {
     ) {
         
         super.init(frame: .zero)
-    
+        
+        if let _setTitle = setTitle {
+           
+            self.setTitle(_setTitle, for: .normal)
+        }
+        if let _setTitleColor = setTitleColor {
+           
+            self.setTitleColor(_setTitleColor, for: .normal)
+        }
+        
+        
+        //MARK: - View
+        
+        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
@@ -72,7 +93,7 @@ public class Button : UIButton {
         }
         
         
-        self.tag = 102
+        self.tag = 101
         
     }
     
