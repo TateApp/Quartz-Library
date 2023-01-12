@@ -45,7 +45,7 @@ public class Button : UIButton {
         
         //MARK: - View
         
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

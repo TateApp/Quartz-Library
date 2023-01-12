@@ -42,18 +42,16 @@ extension UIView {
         
     }
     
-    public func VStackGetSizedBox(views: [UIView]) -> CGFloat {
+    public func VStackGetSizedBox(views: [UIView], height: CGFloat) -> CGFloat {
         
         if self.frame != .zero {
             
             if let superView = self.superview {
                 
-                var superViewHeight = superView.frame.height
+                var superViewHeight = height
                 
                 var ViewsHeight : CGFloat = 0
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Height: \(superViewHeight)")
-                }
+               
                 
                 for index in 0...views.count - 1 {
                     
@@ -73,18 +71,14 @@ extension UIView {
                     case .HStack:
                         let view = views[index] as! HStack
                          ViewsHeight = ViewsHeight + view._height
-                        if Quartz.shared.mode == .developer {
-                            print("HStack Height: \(view._height)")
-                        }
+                       
                     case .VStack:
                         let view = views[index] as! VStack
                          ViewsHeight = ViewsHeight + view._height
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Height \(ViewsHeight)")
-                }
+               
                 var spacerCounter = 0
                 var numberOfViews = 0
                 for index in 0...views.count - 1 {
@@ -94,10 +88,7 @@ extension UIView {
                         numberOfViews = numberOfViews + 1
                     }
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Number Of Views \(numberOfViews)")
-                    print("Number Of Spacers \(spacerCounter)")
-                }
+                
                
                 
                 var superViewHeightDone = (superViewHeight - ViewsHeight)
@@ -106,9 +97,7 @@ extension UIView {
                 }
                 var superViewHeightFinal = superViewHeightDone / CGFloat(numberOfViews + 1)
                 
-                if Quartz.shared.mode == .developer {
-                    print("superViewHeightFinal \(superViewHeightFinal)")
-                }
+               
                 
                 return superViewHeightFinal
             }
@@ -127,9 +116,7 @@ extension UIView {
                 var superViewHeight = superView.frame.height
                 
                 var ViewsHeight : CGFloat = 0
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Height: \(superViewHeight)")
-                }
+               
                 
                 for index in 0...views.count - 1 {
                     
@@ -156,9 +143,7 @@ extension UIView {
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Height \(ViewsHeight)")
-                }
+               
                 var spacerCounter = 0
                 var numberOfViews = 0
                 for index in 0...views.count - 1 {
@@ -168,10 +153,7 @@ extension UIView {
                         numberOfViews = numberOfViews + 1
                     }
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Number Of Views \(numberOfViews)")
-                    print("Number Of Spacers \(spacerCounter)")
-                }
+              
                 
                 var superViewHeightDone = (superViewHeight - ViewsHeight)
                 if spacerCounter == 0 {
@@ -180,9 +162,7 @@ extension UIView {
                 
                 var superViewHeightFinal = superViewHeightDone / CGFloat(spacerCount)
                 
-                if Quartz.shared.mode == .developer {
-                    print("superViewHeightFinal \(superViewHeightFinal)")
-                }
+                
                 
                 return superViewHeightFinal
             }
@@ -201,9 +181,7 @@ extension UIView {
                 var superViewHeight = superView.frame.height
                 
                 var ViewsHeight : CGFloat = 0
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Height: \(superViewHeight)")
-                }
+               
                 
                 for index in 0...views.count - 1 {
                     
@@ -229,14 +207,10 @@ extension UIView {
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Height \(ViewsHeight)")
-                }
+                
                 
                 var superViewHeightDone = (superViewHeight - ViewsHeight)
-                if Quartz.shared.mode == .developer {
-                    print("superViewHeightDone \(superViewHeightDone)")
-                }
+               
                 
                 return superViewHeightDone
             }
@@ -247,7 +221,7 @@ extension UIView {
         return 0
     }
     
-    public func HStackGetSizedBox(views: [UIView]) -> CGFloat {
+    public func HStackGetSizedBox(views: [UIView], width: CGFloat) -> CGFloat {
         
         if self.frame != .zero {
             
@@ -256,9 +230,7 @@ extension UIView {
                 var superViewWidth = superView.frame.width
                 
                 var ViewsWidth : CGFloat = 0
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Width: \(superViewWidth)")
-                }
+               
                 
                 for index in 0...views.count - 1 {
                     
@@ -284,9 +256,7 @@ extension UIView {
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Width \(ViewsWidth)")
-                }
+               
                 var spacerCounter = 0
                 var numberOfViews = 0
                 for index in 0...views.count - 1 {
@@ -296,11 +266,7 @@ extension UIView {
                         numberOfViews = numberOfViews + 1
                     }
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Number Of Views \(numberOfViews)")
-                    print("Number Of Spacers \(spacerCounter)")
-                    
-                }
+              
                 var superViewWidthDone = (superViewWidth - ViewsWidth)
                 
                 if spacerCounter == 0 {
@@ -308,9 +274,7 @@ extension UIView {
                 }
                 var superViewWidthFinal = superViewWidthDone / CGFloat(numberOfViews)
                 
-                if Quartz.shared.mode == .developer {
-                    print("superViewWidthFinal \(superViewWidthFinal)")
-                }
+               
                     
                 return superViewWidthFinal
             }
@@ -329,9 +293,7 @@ extension UIView {
                 var superViewWidth = superView.frame.width
                 
                 var ViewsWidth : CGFloat = 0
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Width: \(superViewWidth)")
-                }
+                
                 for index in 0...views.count - 1 {
                     
                     switch getViewType(view: views[index]) {
@@ -356,9 +318,7 @@ extension UIView {
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Width \(ViewsWidth)")
-                }
+               
           
                 var spacerCounter = 0
                 var numberOfViews = 0
@@ -369,10 +329,7 @@ extension UIView {
                         numberOfViews = numberOfViews + 1
                     }
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Number Of Views \(numberOfViews)")
-                    print("Number Of Spacers \(spacerCounter)")
-                }
+              
                 var superViewWidthDone = (superViewWidth - ViewsWidth)
                 if spacerCounter != 0 {
                     numberOfViews = numberOfViews + 1
@@ -380,9 +337,7 @@ extension UIView {
                 
                 var superViewWidthFinal = superViewWidthDone / CGFloat(spacerCount)
                 
-                if Quartz.shared.mode == .developer {
-                    print("superViewWidthFinal \(superViewWidthFinal)")
-                }
+              
                 return superViewWidthFinal
             }
            
@@ -401,9 +356,7 @@ extension UIView {
                 
                 var ViewsWidth : CGFloat = 0
                 
-                if Quartz.shared.mode == .developer {
-                    print("SuperView Width: \(superViewWidth)")
-                }
+              
                 for index in 0...views.count - 1 {
                     
                     switch getViewType(view: views[index]) {
@@ -440,13 +393,9 @@ extension UIView {
                     }
                     
                 }
-                if Quartz.shared.mode == .developer {
-                    print("Views Width \(ViewsWidth)")
-                }
+               
                 var superViewWidthDone = (superViewWidth - ViewsWidth)
-                if Quartz.shared.mode == .developer {
-                    print("superViewWidthDone \(superViewWidthDone)")
-                }
+               
                 return superViewWidthDone
             }
            
@@ -525,44 +474,47 @@ extension UIView {
     public func getHeight(views: [UIView]) -> CGFloat {
         
         var height: CGFloat = 0
-        for index in 0...views.count - 1 {
-            switch getViewType(view: views[index]) {
-                
-            case .View:
-                let view = views[index] as! View
-                
-                
-                    height = height + view._height
-                
-            case .Button:
-                let view = views[index] as! Button
-                
-                
-                    height = height + view._height
-                
-            case .SizedBox:
-//                let view = views[index] as! SizedBox
-//
-//                if view._height > height {
-//                    height = height + view._height
-//                }
-                break
-            case .Spacer:
-                break
-            case .HStack:
-                let view = views[index] as! HStack
-                
-                
-                    height = height + view._height
-                
-            case .VStack:
-                let view = views[index] as! VStack
-                
-                
-                    height = height + view._height
-                
+        if views.count != 0 {
+            for index in 0...views.count - 1 {
+                switch getViewType(view: views[index]) {
+                    
+                case .View:
+                    let view = views[index] as! View
+                    
+                    
+                        height = height + view._height
+                    
+                case .Button:
+                    let view = views[index] as! Button
+                    
+                    
+                        height = height + view._height
+                    
+                case .SizedBox:
+    //                let view = views[index] as! SizedBox
+    //
+    //                if view._height > height {
+    //                    height = height + view._height
+    //                }
+                    break
+                case .Spacer:
+                    break
+                case .HStack:
+                    let view = views[index] as! HStack
+                    
+                    
+                        height = height + view._height
+                    
+                case .VStack:
+                    let view = views[index] as! VStack
+                    
+                    
+                        height = height + view._height
+                    
+                }
             }
         }
+
         return height
     }
     
@@ -570,45 +522,48 @@ extension UIView {
         
         var width: CGFloat = 0
         
-        for index in 0...views.count - 1 {
-            
-            switch getViewType(view: views[index]) {
+        if views.count != 0 {
+            for index in 0...views.count - 1 {
                 
-            case .View:
-                let view = views[index] as! View
-                
-                
-                    width = width + view._width
-                
-            case .Button:
-                let view = views[index] as! Button
-                
-                
-                    width = width + view._width
-                
-            case .SizedBox:
-//                let view = views[index] as! SizedBox
-//
-//                if view._width > width {
-//                    width = width + view._width
-//                }
-                break
-            case .Spacer:
-                break
-            case .HStack:
-                let view = views[index] as! HStack
-                
-                
-                    width = width + view._width
-                
-            case .VStack:
-                let view = views[index] as! VStack
-                
-                
-                    width = width + view._width
-                
+                switch getViewType(view: views[index]) {
+                    
+                case .View:
+                    let view = views[index] as! View
+                    
+                    
+                        width = width + view._width
+                    
+                case .Button:
+                    let view = views[index] as! Button
+                    
+                    
+                        width = width + view._width
+                    
+                case .SizedBox:
+    //                let view = views[index] as! SizedBox
+    //
+    //                if view._width > width {
+    //                    width = width + view._width
+    //                }
+                    break
+                case .Spacer:
+                    break
+                case .HStack:
+                    let view = views[index] as! HStack
+                    
+                    
+                        width = width + view._width
+                    
+                case .VStack:
+                    let view = views[index] as! VStack
+                    
+                    
+                        width = width + view._width
+                    
+                }
             }
         }
+        
         
         return width
     }

@@ -26,7 +26,7 @@ public class TabBar : UITabBar {
         
         super.init(frame: .zero)
     
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

@@ -27,7 +27,7 @@ public class TextView : UITextView {
         super.init(frame: .zero, textContainer: nil)
     
         
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

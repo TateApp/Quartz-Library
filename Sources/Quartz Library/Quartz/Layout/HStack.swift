@@ -23,6 +23,7 @@ public class HStack : UIStackView {
     public init(
         type : HStackType,
         widthType: WidthType = .superView,
+        
         _width: CGFloat? = nil,
         _widthExpanded : Bool = false,
         _height: CGFloat? = nil,
@@ -50,15 +51,22 @@ public class HStack : UIStackView {
             self._height = theHeight
         }
         
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        if views.count != 0 {
+            self.translatesAutoresizingMaskIntoConstraints = false
+     
+        
+        
         
       
-      
+        
+            
+       
         if self._height != 0 {
             
+            
             self.heightAnchor.constraint(equalToConstant: self._height).isActive = true
+            
             if Quartz.shared.mode == .developer {
                 print("HStack Set Height to \(self._height))")
             }
@@ -73,6 +81,7 @@ public class HStack : UIStackView {
         }
         
         
+        }
             
            
         
@@ -111,9 +120,12 @@ public class HStack : UIStackView {
                
                 case .fit:
                     self.widthAnchor.constraint(equalToConstant: self.getWidth(views: self.views)).isActive = true
+                    _width = self.getWidth(views: self.views)
                 case .superView:
                     if let superView = self.superview {
                         self.widthAnchor.constraint(equalToConstant: superView.frame.width).isActive = true
+                        _width = superView.frame.width
+                    
                     }
                    
                 case .value:
@@ -130,44 +142,57 @@ public class HStack : UIStackView {
         switch type {
             //MARK: -
         case .equalSpacing:
-            var sizedBoxWidth = self.HStackGetSizedBox(views: self.views)
+            var sizedBoxWidth = self.HStackGetSizedBox(views: self.views, width: _width)
             if Quartz.shared.mode == .developer {
                 print("SizedBox Width: \(sizedBoxWidth)")
             }
-            for index in 0...views.count - 1 {
-                
-                self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth, _height: self.frame.height))
-                
-                self.addArrangedSubview(views[index])
+            if views.count != 0 {
+                for index in 0...views.count - 1 {
+                    
+                    self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth, _height: self.frame.height))
+                    
+                    self.addArrangedSubview(views[index])
+                }
+                self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth,_height: self.frame.height))
             }
-            self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth,_height: self.frame.height))
+            
             //MARK: -
         case .pushLeft:
             var sizedBoxWidth = self.HStackGetPushWidth(views: self.views)
-            for index in 0...views.count - 1 {
-              
-                self.addArrangedSubview(views[index])
-                
+            if views.count != 0 {
+                for index in 0...views.count - 1 {
+                    
+                    self.addArrangedSubview(views[index])
+                    
+                }
+                self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth, _height: self.frame.height))
             }
-            self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth, _height: self.frame.height))
             //MARK: -
         case .pushRight:
             
             var sizedBoxWidth = self.HStackGetPushWidth(views: self.views)
             
+            if views.count != 0 {
+                
             self.addArrangedSubview(StackSizedBox(_width: sizedBoxWidth, _height: self.frame.height))
             
-            for index in 0...views.count - 1 {
-              
-                self.addArrangedSubview(views[index])
-                
+        
+                for index in 0...views.count - 1 {
+                  
+                    self.addArrangedSubview(views[index])
+                    
+                }
             }
+           
          
         case .manual:
           
             
             var spaceCountEven = false
             var spacerCounter = 0
+            if views.count != 0 {
+                
+          
             for index in 0...views.count - 1 {
                 if  self.getViewType(view: views[index]) == .Spacer {
                     spacerCounter = spacerCounter + 1
@@ -199,7 +224,7 @@ public class HStack : UIStackView {
                 
             }
             
-            
+            }
         
          
             

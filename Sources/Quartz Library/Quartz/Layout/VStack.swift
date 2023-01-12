@@ -9,16 +9,27 @@ public enum VStackType {
     case pushDown
     case manual
 }
+public enum HeightType {
+    case fit
+    case superView
+    case value
+    
+}
 public class VStack : UIStackView {
+    
     public var views = [UIView]()
+    
     public var type : VStackType = .equalSpacing
+    
     public var _width : CGFloat = 0
+    
     public var _height : CGFloat = 0
     
+    public var heightType: HeightType = .superView
     
     public init(
         type : VStackType,
-        
+        heightType: HeightType = .superView,
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
         views : [UIView]
@@ -29,18 +40,15 @@ public class VStack : UIStackView {
         
         self.views = views
         self.type = type
+        self.heightType = heightType
         
         if let width = _width {
             self._width = width
-            if Quartz.shared.mode == .developer {
-                print("Width Set")
-            }
+           
         }
         if let height = _height {
             self._height = height
-            if Quartz.shared.mode == .developer {
-                print("height Set")
-            }
+           
         }
         self.distribution = .fillProportionally
         self.axis = .vertical
@@ -49,29 +57,31 @@ public class VStack : UIStackView {
         
         self.tag = 203
         
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        if self._width != 0 {
+        if views.count != 0 {
             
-            self.widthAnchor.constraint(equalToConstant: self._width).isActive = true
+            self.translatesAutoresizingMaskIntoConstraints = false
             
-        } else {
             
-            self.widthAnchor.constraint(equalToConstant: self.getWidth(views: self.views)).isActive = true
+            
+            
+            if self._width != 0 {
+                
+                
+                self.widthAnchor.constraint(equalToConstant: self._width).isActive = true
+                
+                
+            } else {
+                
+                self.widthAnchor.constraint(equalToConstant: self.getWidth(views: self.views)).isActive = true
+                
+               
+                
+                self._width = self.getWidth(views: self.views)
+                
+            }
             
         }
-      
-        if self._height != 0 {
-            
-            self.widthAnchor.constraint(equalToConstant: self._height).isActive = true
-            
-        } else {
-            
-            self.heightAnchor.constraint(equalToConstant: self.getHeight(views: self.views)).isActive = true
-            
-        }
+        
         
             
         
@@ -93,14 +103,38 @@ public class VStack : UIStackView {
     public func setState() {
         
         if let superView = self.superview {
-            if Quartz.shared.mode == .developer {
-                print("Set State")
-            }
-           
+          
           
             
             if self.frame != .zero {
                 
+                if self._height != 0 {
+                    
+                    self.heightAnchor.constraint(equalToConstant: self._height).isActive = true
+                    
+                } else {
+                    
+                    switch self.heightType {
+                        
+                   
+                    case .fit:
+                        self.heightAnchor.constraint(equalToConstant: self.getHeight(views: self.views)).isActive = true
+                        self._height = self.getHeight(views: self.views)
+                    case .superView:
+                        if let superView = self.superview {
+                            self.heightAnchor.constraint(equalToConstant: superView.frame.height).isActive = true
+                            self._height = superView.frame.height
+                        }
+                       
+                    case .value:
+                        self.heightAnchor.constraint(equalToConstant: self._height).isActive = true
+                        
+                        
+                    }
+                    
+                  
+                    
+                }
             
             for arrangedSubView in self.arrangedSubviews {
                 self.removeArrangedSubview(arrangedSubView)
@@ -110,14 +144,11 @@ public class VStack : UIStackView {
             switch type {
                 //MARK: -
             case .equalSpacing:
-                if Quartz.shared.mode == .developer {
-                    print("Here")
-                }
-                var sizedBoxHeight = self.VStackGetSizedBox(views: self.views)
+             
+                
+               
+                var sizedBoxHeight = self.VStackGetSizedBox(views: self.views, height: _height)
             
-                if Quartz.shared.mode == .developer {
-                    print("SizedBox Height: \(sizedBoxHeight)")
-                }
                 
                 for index in 0...views.count - 1 {
                     self.addArrangedSubview(StackSizedBox(_width: self.frame.width, _height: sizedBoxHeight))

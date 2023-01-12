@@ -19,7 +19,7 @@ public class SizedBox : UIView {
         self._width = _width
         self._height = _height
         
-        UserDefaults.standard.set(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.widthAnchor.constraint(equalToConstant: _width).isActive = true
@@ -48,7 +48,7 @@ public class SizedBox : UIView {
 
 public class StackSizedBox : UIView {
     
-    let label = UILabel()
+    let label = UIView()
     
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
@@ -67,24 +67,20 @@ public class StackSizedBox : UIView {
         self.heightAnchor.constraint(equalToConstant: _height).isActive = true
         
    
-        
-        
-        if Quartz.shared.mode == .production {
-            
-        } else {
-            self.addSubview(label)
-            label.text = "SizedBox"
-            label.textAlignment = .center
-            label.textColor = .black
-            label.max()
-            
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor.red.cgColor
-      
-        }
-   
-        
-      
+        self.addSubview(label)
+        label.max()
+//        if Quartz.shared.mode == .production {
+//            self.addSubview(label)
+//            label.max()
+//
+//       
+//            
+//        } else {
+//         
+//        }
+//   
+//        
+//      
         
         
         
