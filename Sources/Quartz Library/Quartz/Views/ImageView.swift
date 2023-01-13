@@ -1,4 +1,6 @@
-import QuartzCore
+import QuartzCore 
+ 
+
  
 import UIKit
 
@@ -31,6 +33,17 @@ public class ImageView : UIImageView {
         super.init(frame: .zero)
     
     
+        
+        if let _image = image {
+            
+            self.image = _image
+        }
+        
+        if let _contentMode = contentMode {
+            
+            self.contentMode = _contentMode
+            
+        }
         
         
         self.translatesAutoresizingMaskIntoConstraints = false
