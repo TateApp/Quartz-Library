@@ -1,5 +1,4 @@
 import QuartzCore 
- 
 
  
 import UIKit
@@ -13,6 +12,22 @@ public class TextField : UITextField {
     public var _height : CGFloat = 0
     
     public init(
+        
+        _text: String? = nil,
+        _placeHolder: String? = nil,
+        _font: UIFont? = nil,
+        _textAlignment: NSTextAlignment? = nil,
+        _textColor : UIColor? = nil,
+        _delegate : UITextFieldDelegate? = nil,
+        _attributedText: NSAttributedString? = nil,
+        _background: UIImage? = nil,
+        _borderStyle: UITextField.BorderStyle? = nil,
+        _defaultTextAttributes: [NSAttributedString.Key : Any]? = nil,
+        _inputAccessoryView: UIView? = nil,
+        _leftView: UIView? = nil,
+        _markedTextStyle: [NSAttributedString.Key : Any]? = nil,
+        _typingAttributes: [NSAttributedString.Key : Any]? = nil,
+        
         
         //MARK: - View
         _width: CGFloat? = nil,
@@ -29,6 +44,8 @@ public class TextField : UITextField {
         
         super.init(frame: .zero)
     
+        
+        
         
         
         

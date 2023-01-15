@@ -1,5 +1,4 @@
 import QuartzCore 
- 
 
  
 import UIKit
@@ -15,10 +14,14 @@ public class Button : UIButton {
     public init(
      
         //MARK: - Button
-        setTitle: String? = nil,
-        setTitleColor: UIColor? = nil,
-        setTitleShadowColor: UIColor? = nil,
-        setImage: UIImage? = nil,
+        _setTitle: String? = nil,
+        _setTitleColor: UIColor? = nil,
+        _setTitleShadowColor: UIColor? = nil,
+        _setImage: UIImage? = nil,
+        _setBackgroundImage: UIImage? = nil,
+        _target: Any? = nil,
+        _action: Selector? = nil,
+        _for: UIControl.Event? = nil,
         
         //MARK: - View
         _width: CGFloat? = nil,
@@ -35,19 +38,47 @@ public class Button : UIButton {
         
         super.init(frame: .zero)
         
-        if let _setTitle = setTitle {
+//    _setTitle: String? = nil,
+        if let _setTitle = _setTitle {
            
             self.setTitle(_setTitle, for: .normal)
         }
-        if let _setTitleColor = setTitleColor {
+    
+//    _setTitleColor: UIColor? = nil,
+        if let _setTitleColor = _setTitleColor {
            
             self.setTitleColor(_setTitleColor, for: .normal)
         }
+    
+//    _setTitleShadowColor: UIColor? = nil,
+        if let _setTitleShadowColor = _setTitleShadowColor {
+           
+            self.setTitleShadowColor(_setTitleShadowColor, for: .normal)
+        }
+//    _setImage: UIImage? = nil,
+        if let _setImage = _setImage {
+           
+            self.setImage(_setImage, for: .normal)
+        }
+//    _setBackgroundImage: UIImage? = nil,
+        if let _setBackgroundImage = _setBackgroundImage {
+           
+            self.setBackgroundImage(_setBackgroundImage, for: .normal)
+        }
+
         
+        //    _target: Any? = nil,
+        //    _action: Selector? = nil,
+        //    _for: UIControl.Event? = nil,
+                
         
+        if let _target = _target, let _action = _action, let _for = _for {
+            self.addTarget(_target, action: _action, for: _for)
+        }
+    
         //MARK: - View
         
-        
+    
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

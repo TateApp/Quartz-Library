@@ -1,5 +1,4 @@
 import QuartzCore 
- 
 
  
 import UIKit
@@ -17,6 +16,7 @@ public class ImageView : UIImageView {
         //MARK: - ImageView
         image: UIImage? = nil,
         contentMode: UIView.ContentMode? = nil,
+        
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

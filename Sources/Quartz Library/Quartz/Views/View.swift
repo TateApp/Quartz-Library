@@ -1,7 +1,6 @@
 import QuartzCore 
  
  
- 
 import UIKit
 
 public class View : UIView {

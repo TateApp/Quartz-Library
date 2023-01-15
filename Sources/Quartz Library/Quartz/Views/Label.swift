@@ -1,5 +1,4 @@
 import QuartzCore 
- 
 
  
 import UIKit
@@ -18,11 +17,14 @@ public class Label : UILabel {
         text: String? = nil,
         font: UIFont? = nil,
         textColor: UIColor? = nil,
-        textAligment: NSTextAlignment? = nil,
+        textAlignment: NSTextAlignment? = nil,
         attributedText: NSAttributedString? = nil,
         highlightedTextColor : UIColor? = nil,
         lineBreakMode: NSLineBreakMode? = nil,
         lineBreakStrategy: NSParagraphStyle.LineBreakStrategy? = nil,
+        shadowColor: UIColor? = nil,
+        shadowOffset : CGSize? = nil,
+        
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
@@ -38,6 +40,37 @@ public class Label : UILabel {
         
         super.init(frame: .zero)
     
+        
+        if let _text = text {
+            self.text = _text
+        }
+        if let _font = font {
+            self.font = _font
+        }
+        if let _textColor = textColor {
+            self.textColor = _textColor
+        }
+        if let _textAlignment = textAlignment {
+            self.textAlignment = _textAlignment
+        }
+        if let _attributedText = attributedText {
+            self.attributedText = _attributedText
+        }
+        if let _highlightedTextColor = highlightedTextColor {
+            self.highlightedTextColor = _highlightedTextColor
+        }
+        if let _lineBreakMode = lineBreakMode {
+            self.lineBreakMode = _lineBreakMode
+        }
+        if let _lineBreakStrategy = lineBreakStrategy {
+            self.lineBreakStrategy = _lineBreakStrategy
+        }
+        if let _shadowColor = shadowColor {
+            self.shadowColor = _shadowColor
+        }
+        if let _shadowOffset = shadowOffset {
+            self.shadowOffset = _shadowOffset
+        }
         
         
         
