@@ -1,7 +1,7 @@
 import QuartzCore 
  
 import XCTest
-@testable import Quartz_Library
+@testable 
 
 final class Quartz_LibraryTests: XCTestCase {
     func testExample() throws {
