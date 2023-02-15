@@ -3,8 +3,8 @@ import QuartzCore
  
 import UIKit
 public enum ViewAttributes {
-    case width
-    case height
+    
+    
     case backgroundColor
     case borderColor
     case borderWidth
@@ -102,11 +102,7 @@ public class View : UIView {
         for attribute in attributes.keys {
             
             switch attribute {
-           
-            case .width:
-                self.widthAnchor.constraint(equalToConstant: attributes[attribute] as! CGFloat).isActive = true
-            case .height:
-                self.widthAnchor.constraint(equalToConstant: attributes[attribute] as! CGFloat).isActive = true
+        
             case .backgroundColor:
                 self.backgroundColor = attributes[attribute] as? UIColor
             case .borderColor:
