@@ -108,9 +108,15 @@ public class View : UIView {
             case .borderColor:
                 self.layer.borderColor = attributes[attribute] as! CGColor
             case .borderWidth:
-                self.layer.borderWidth = attributes[attribute] as! CGFloat
+                
+                let value = attributes[attribute] as! Int
+                
+                self.layer.borderWidth =  CGFloat(value)
             case .cornerRadius:
-                self.layer.cornerRadius = attributes[attribute] as! CGFloat
+                
+                let value = attributes[attribute] as! Int
+                
+                self.layer.cornerRadius = CGFloat(value)
             case .shadowColor:
                 self.layer.shadowColor = attributes[attribute] as! CGColor
             case .shadowOpacity:
