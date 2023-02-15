@@ -2,7 +2,18 @@ import QuartzCore
 
  
 import UIKit
-
+public enum LabelAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class Label : UILabel {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,7 +23,7 @@ public class Label : UILabel {
     public var _height : CGFloat = 0
     
     public init(
-        
+        attributes: [LabelAttributes : Any]? = [LabelAttributes : Any](),
         //MARK: - Label
         text: String? = nil,
         font: UIFont? = nil,

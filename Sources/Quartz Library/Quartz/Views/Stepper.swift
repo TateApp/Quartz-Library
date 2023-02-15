@@ -3,7 +3,18 @@ import QuartzCore
  
 import UIKit
 
-
+public enum StepperAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class Stepper : UIStepper {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -13,6 +24,7 @@ public class Stepper : UIStepper {
     public var _height : CGFloat = 0
     
     public init(
+        attributes: [StepperAttributes : Any]? = [StepperAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

@@ -2,6 +2,7 @@ import QuartzCore
  
  
 import UIKit
+
 public enum ViewAttributes {
     
     

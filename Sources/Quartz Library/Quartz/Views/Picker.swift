@@ -2,7 +2,18 @@ import QuartzCore
 
  
 import UIKit
-
+public enum PickerAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class Picker : UIPickerView {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,6 +23,7 @@ public class Picker : UIPickerView {
     public var _height : CGFloat = 0
     
     public init(
+        attributes: [PickerAttributes : Any]? = [PickerAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

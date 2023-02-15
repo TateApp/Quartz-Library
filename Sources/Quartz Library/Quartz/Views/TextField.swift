@@ -3,6 +3,18 @@ import QuartzCore
  
 import UIKit
 
+public enum TextFieldAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class TextField : UITextField {
     
     public var widthConstraint = NSLayoutConstraint()

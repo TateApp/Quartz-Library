@@ -2,7 +2,18 @@ import QuartzCore
 
  
 import UIKit
-
+public enum ImageViewAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class ImageView : UIImageView {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,7 +23,7 @@ public class ImageView : UIImageView {
     public var _height : CGFloat = 0
     
     public init(
-        
+        attributes: [ImageViewAttributes : Any]? = [ImageViewAttributes : Any](),
         //MARK: - ImageView
         image: UIImage? = nil,
         contentMode: UIView.ContentMode? = nil,

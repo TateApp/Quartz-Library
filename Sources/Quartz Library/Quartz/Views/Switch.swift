@@ -3,6 +3,18 @@ import QuartzCore
  
 import UIKit
 
+public enum SwitchAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class Switch : UISwitch {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,6 +24,7 @@ public class Switch : UISwitch {
     public var _height : CGFloat = 0
     
     public init(
+        attributes: [SwitchAttributes : Any]? = [SwitchAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

@@ -2,7 +2,18 @@ import QuartzCore
 
  
 import UIKit
-
+public enum ProgressViewAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class ProgressView : UIProgressView {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,6 +23,7 @@ public class ProgressView : UIProgressView {
     public var _height : CGFloat = 0
     
     public init(
+        attributes: [ProgressViewAttributes : Any]? = [ProgressViewAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

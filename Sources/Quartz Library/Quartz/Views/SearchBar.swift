@@ -2,7 +2,18 @@ import QuartzCore
 
  
 import UIKit
-
+public enum SearchBarAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class SearchBar : UISearchBar {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,6 +23,7 @@ public class SearchBar : UISearchBar {
     public var _height : CGFloat = 0
     
     public init(
+        attributes: [SearchBarAttributes : Any]? = [SearchBarAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,

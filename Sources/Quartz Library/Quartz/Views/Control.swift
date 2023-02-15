@@ -3,6 +3,18 @@ import QuartzCore
  
 import UIKit
 
+public enum ControlAttributes {
+    
+    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class Control : UIControl {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,7 +24,7 @@ public class Control : UIControl {
     public var _height : CGFloat = 0
     
     public init(
-        
+        attributes: [ControlAttributes : Any]? = [ControlAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
