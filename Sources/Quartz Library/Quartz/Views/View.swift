@@ -2,7 +2,18 @@ import QuartzCore
  
  
 import UIKit
-
+public enum ViewAttributes {
+    case width
+    case height
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
+}
 public class View : UIView {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -12,7 +23,7 @@ public class View : UIView {
     public var _height : CGFloat = 0
     
     public init(
-        
+        attributes: [ViewAttributes : Any]? = [ViewAttributes : Any](),
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
@@ -28,7 +39,7 @@ public class View : UIView {
         
         super.init(frame: .zero)
         
-        
+       
         
         
         
@@ -77,11 +88,44 @@ public class View : UIView {
             self.alpha = _alpha
         }
         
+        if let _attributes = attributes {
+            self.setAttributes(attributes: _attributes)
+        }
+        
         
         self.tag = 100
         
     }
     
+    public func setAttributes(attributes: [ViewAttributes :Any]) {
+        
+        for attribute in attributes.keys {
+            
+            switch attribute {
+           
+            case .width:
+                self.widthAnchor.constraint(equalToConstant: attributes[attribute] as! CGFloat).isActive = true
+            case .height:
+                self.widthAnchor.constraint(equalToConstant: attributes[attribute] as! CGFloat).isActive = true
+            case .backgroundColor:
+                self.backgroundColor = attributes[attribute] as? UIColor
+            case .borderColor:
+                self.layer.borderColor = attributes[attribute] as! CGColor
+            case .borderWidth:
+                self.layer.borderWidth = attributes[attribute] as! CGFloat
+            case .cornerRadius:
+                self.layer.cornerRadius = attributes[attribute] as! CGFloat
+            case .shadowColor:
+                self.layer.shadowColor = attributes[attribute] as! CGColor
+            case .shadowOpacity:
+                self.layer.shadowOpacity = attributes[attribute] as! Float
+            case .shadowRadius:
+                self.layer.shadowRadius = attributes[attribute] as! CGFloat
+            case .alpha:
+                self.alpha = attributes[attribute] as! CGFloat
+            }
+        }
+    }
     
     
     required init?(coder: NSCoder) {
