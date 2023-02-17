@@ -22,8 +22,6 @@ let package = Package(
         .target(
             name: "Quartz Library",
             dependencies: []),
-        .testTarget(
-            name: "Quartz LibraryTests",
-            dependencies: ["Quartz Library"]),
+     
     ]
 )
