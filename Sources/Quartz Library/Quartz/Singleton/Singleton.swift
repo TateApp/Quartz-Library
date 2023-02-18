@@ -20,7 +20,7 @@ class Screen: NSObject {
     
     static let size = Screen()
     var width : CGFloat = UIScreen.main.bounds.width
-    var height : CGFloat = UIScreen.main.bounds.width
+    var height : CGFloat = UIScreen.main.bounds.height
     
 }
 
