@@ -16,6 +16,13 @@ class Quartz : NSObject {
     
     
 }
+class Screen: NSObject {
+    
+    static let size = Screen()
+    var width : CGFloat = UIScreen.main.bounds.width
+    var height : CGFloat = UIScreen.main.bounds.width
+    
+}
 
 //I sought those two black eyes everywhere. When my teacher or my brother rebuked me or were unkind, I sought help every day in the sweetness of those two black eyes. In the harbor of those two black eyes, I sought refuge. She died. I cried, and I sought in the stars, In the darkness of the night for those two black eyes, But I found them not.
 //Many other black eyes shone upon my childhood. But they were not those two black eyes which I had loved. In the stillness of the forest and the darkness of the night I used to watch under the stars, Watching in the darkness, Looking for those two angelic, Unapproachable black eyes, But I found them not.
