@@ -18,7 +18,7 @@ extension UIView {
       
         
     }
-    public func center() {
+    public func centerView() {
         if let superView = self.superview {
             self.translatesAutoresizingMaskIntoConstraints = false
             
