@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "quartz",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/TateApp/Quartz.git",
+      "state" : {
+        "revision" : "2f813ab032af56fabeac0f0f9c34627e4d958ec7",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
