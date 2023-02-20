@@ -1,132 +1,91 @@
-import QuartzCore 
+import QuartzCore
  
  
 import UIKit
 
-public enum ViewAttributes {
+public enum FlowLayoutAttributes {
     
     
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
+    case estimatedItemSize
+    case footerReferenceSize
+    case headerReferenceSize
+    case itemSize
+    case minimumInteritemSpacing
+    case minimumLineSpacing
+    case scrollDirection
+    
+
 }
-public class View : UIView {
+public class FlowLayout : UICollectionViewFlowLayout {
     
-    public var widthConstraint = NSLayoutConstraint()
-    public var heightConstraint = NSLayoutConstraint()
     
-    public var _width : CGFloat = 0
-    public var _height : CGFloat = 0
     
     public init(
-        attributes: [ViewAttributes : Any]? = [ViewAttributes : Any](),
-        //MARK: - View
-        _width: CGFloat? = nil,
-        _height: CGFloat? = nil,
-        _backgroundColor : UIColor? = nil,
-        _borderColor : UIColor? = nil,
-        _borderWidth: CGFloat? = nil,
-        _cornerRadius: CGFloat? = nil,
-        _shadowColor: UIColor? = nil,
-        _shadowOpacity: CGFloat? = nil,
-        _shadowRadius: CGFloat? = nil,
-        _alpha: CGFloat? = 1.0
+        attributes: [FlowLayoutAttributes : Any]? = [FlowLayoutAttributes : Any](),
+        //MARK: - UICollectionViewFlowLayout
+        _estimatedItemSize: CGSize? = nil,
+        _footerReferenceSize: CGSize? = nil,
+        _headerReferenceSize: CGSize? = nil,
+        _itemSize: CGSize? = nil,
+        _minimumInteritemSpacing: CGFloat? = nil,
+        _minimumLineSpacing: CGFloat? = nil,
+        _scrollDirection: UICollectionView.ScrollDirection? = nil
+        
     ) {
         
-        super.init(frame: .zero)
+        super.init()
         
-       
+    
+        if let estimatedItemSize = _estimatedItemSize {
+            self.estimatedItemSize = estimatedItemSize
+        }
+        if let footerReferenceSize = _footerReferenceSize {
+            self.footerReferenceSize = footerReferenceSize
+        }
+        if let headerReferenceSize = _headerReferenceSize {
+            self.headerReferenceSize = headerReferenceSize
+        }
+        if let itemSize = _itemSize {
+            self.itemSize = itemSize
+        }
+        if let minimumInteritemSpacing = _minimumInteritemSpacing {
+            self.minimumInteritemSpacing = minimumInteritemSpacing
+        }
+        if let minimumLineSpacing = _minimumLineSpacing {
+            self.minimumLineSpacing = minimumLineSpacing
+        }
+        if let scrollDirection = _scrollDirection {
+            self.scrollDirection = scrollDirection
+        }
         
-        
-        let image = UIImage(named: "Spirit")!
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        if let theWidth = _width {
-            
-            self._width = theWidth
-            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
-            
-        }
-      
-        if let theHeight = _height {
-            
-            self._height = theHeight
-            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
-            
-        }
-      
-      
-      
-        
-        
-        if let _backgroundColor = _backgroundColor {
-            self.backgroundColor = _backgroundColor
-        }
-        if let _borderColor = _borderColor {
-            self.backgroundColor = _borderColor
-        }
-        if let _borderWidth = _borderWidth {
-            self.layer.borderWidth = _borderWidth
-        }
-        if let _cornerRadius = _cornerRadius {
-            self.layer.cornerRadius = _cornerRadius
-        }
-        if let _shadowColor = _shadowColor {
-            self.layer.shadowColor = _shadowColor.cgColor
-        }
-        if let _shadowOpacity = _shadowOpacity {
-            self.layer.shadowOpacity = Float(_shadowOpacity)
-        }
-        if let _shadowRadius = _shadowRadius {
-            self.layer.shadowRadius = _shadowRadius
-        }
-        if let _alpha = _alpha {
-            self.alpha = _alpha
-        }
         
         if let _attributes = attributes {
             self.setAttributes(attributes: _attributes)
         }
         
         
-        self.tag = 100
-        
     }
     
-    public func setAttributes(attributes: [ViewAttributes :Any]) {
+    public func setAttributes(attributes: [FlowLayoutAttributes :Any]) {
         
         for attribute in attributes.keys {
-            
+//
             switch attribute {
-        
-            case .backgroundColor:
-                self.backgroundColor = attributes[attribute] as? UIColor
-            case .borderColor:
-                self.layer.borderColor = attributes[attribute] as! CGColor
-            case .borderWidth:
-                
-                let value = attributes[attribute] as! Int
-                
-                self.layer.borderWidth =  CGFloat(value)
-            case .cornerRadius:
-                
-                let value = attributes[attribute] as! Int
-                
-                self.layer.cornerRadius = CGFloat(value)
-            case .shadowColor:
-                self.layer.shadowColor = attributes[attribute] as! CGColor
-            case .shadowOpacity:
-                self.layer.shadowOpacity = attributes[attribute] as! Float
-            case .shadowRadius:
-                self.layer.shadowRadius = attributes[attribute] as! CGFloat
-            case .alpha:
-                self.alpha = attributes[attribute] as! CGFloat
+
+            case .estimatedItemSize:
+                self.estimatedItemSize = attributes[attribute] as! CGSize
+            case .footerReferenceSize:
+                self.footerReferenceSize = attributes[attribute] as! CGSize
+            case .headerReferenceSize:
+                self.headerReferenceSize = attributes[attribute] as! CGSize
+            case .itemSize:
+                self.itemSize = attributes[attribute] as! CGSize
+            case .minimumInteritemSpacing:
+                self.minimumInteritemSpacing = attributes[attribute] as! CGFloat
+            case .minimumLineSpacing:
+                self.minimumLineSpacing = attributes[attribute] as! CGFloat
+            case .scrollDirection:
+                self.scrollDirection = attributes[attribute] as! UICollectionView.ScrollDirection
             }
         }
     }
