@@ -18,7 +18,7 @@ public enum FlowLayoutAttributes {
 }
 public class FlowLayout : UICollectionViewFlowLayout {
     
-    
+    let image = UIImage(named: "Spirit")!
     
     public init(
         attributes: [FlowLayoutAttributes : Any]? = [FlowLayoutAttributes : Any](),
@@ -36,6 +36,8 @@ public class FlowLayout : UICollectionViewFlowLayout {
         super.init()
         
     
+    
+        
         if let estimatedItemSize = _estimatedItemSize {
             self.estimatedItemSize = estimatedItemSize
         }

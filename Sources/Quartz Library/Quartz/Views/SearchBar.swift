@@ -22,6 +22,8 @@ public class SearchBar : UISearchBar {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [SearchBarAttributes : Any]? = [SearchBarAttributes : Any](),
         //MARK: - View
@@ -39,6 +41,7 @@ public class SearchBar : UISearchBar {
         
         super.init(frame: .zero)
     
+      
         
         
         self.translatesAutoresizingMaskIntoConstraints = false

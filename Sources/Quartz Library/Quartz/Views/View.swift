@@ -23,6 +23,9 @@ public class View : UIView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [ViewAttributes : Any]? = [ViewAttributes : Any](),
         //MARK: - View
@@ -43,7 +46,7 @@ public class View : UIView {
        
         
         
-        let image = UIImage(named: "Spirit")!
+
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

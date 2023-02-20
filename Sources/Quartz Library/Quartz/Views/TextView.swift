@@ -23,6 +23,8 @@ public class TextView : UITextView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         //MARK: - View
         _width: CGFloat? = nil,
@@ -39,7 +41,7 @@ public class TextView : UITextView {
         
         super.init(frame: .zero, textContainer: nil)
     
-        
+
         
         
         self.translatesAutoresizingMaskIntoConstraints = false

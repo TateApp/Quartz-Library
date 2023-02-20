@@ -23,6 +23,7 @@ public class ToolBar : UIToolbar {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
     public init(
         //MARK: - View
         _width: CGFloat? = nil,
@@ -39,6 +40,7 @@ public class ToolBar : UIToolbar {
         
         super.init(frame: .zero)
     
+
         
         
         self.translatesAutoresizingMaskIntoConstraints = false

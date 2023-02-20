@@ -23,6 +23,8 @@ public class DatePicker : UIDatePicker {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [DatePickerAttributes : Any]? = [DatePickerAttributes : Any](),
         //MARK: - View
@@ -40,7 +42,7 @@ public class DatePicker : UIDatePicker {
         
         super.init(frame: .zero)
     
-        
+
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

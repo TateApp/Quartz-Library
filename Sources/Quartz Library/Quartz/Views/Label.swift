@@ -22,6 +22,8 @@ public class Label : UILabel {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [LabelAttributes : Any]? = [LabelAttributes : Any](),
         //MARK: - Label
@@ -51,6 +53,7 @@ public class Label : UILabel {
         
         super.init(frame: .zero)
     
+      
         
         if let _text = text {
             self.text = _text

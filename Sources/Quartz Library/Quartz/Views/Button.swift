@@ -25,6 +25,8 @@ public class Button : UIButton {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [ButtonAttributes : Any]? = [ButtonAttributes : Any](),
         //MARK: - Button
@@ -51,6 +53,8 @@ public class Button : UIButton {
     ) {
         
         super.init(frame: .zero)
+        
+   
         
 //    _setTitle: String? = nil,
         if let _setTitle = _setTitle {

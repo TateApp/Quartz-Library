@@ -22,6 +22,8 @@ public class ImageView : UIImageView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let spirit = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [ImageViewAttributes : Any]? = [ImageViewAttributes : Any](),
         //MARK: - ImageView
@@ -43,7 +45,7 @@ public class ImageView : UIImageView {
         
         super.init(frame: .zero)
     
-    
+     
         
         if let _image = image {
             

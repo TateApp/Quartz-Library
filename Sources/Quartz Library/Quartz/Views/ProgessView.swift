@@ -22,6 +22,8 @@ public class ProgressView : UIProgressView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [ProgressViewAttributes : Any]? = [ProgressViewAttributes : Any](),
         //MARK: - View
@@ -39,7 +41,7 @@ public class ProgressView : UIProgressView {
         
         super.init(frame: .zero)
     
-        
+
         
         self.translatesAutoresizingMaskIntoConstraints = false
         

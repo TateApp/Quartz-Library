@@ -23,6 +23,8 @@ public class Control : UIControl {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
+    let image = UIImage(named: "Spirit")!
+    
     public init(
         attributes: [ControlAttributes : Any]? = [ControlAttributes : Any](),
         //MARK: - View
@@ -40,7 +42,7 @@ public class Control : UIControl {
         
         super.init(frame: .zero)
     
-        
+     
         
         self.translatesAutoresizingMaskIntoConstraints = false
         
