@@ -22,7 +22,7 @@ public class ImageView : UIImageView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
-    let spirit = UIImage(named: "Spirit")!
+//    let spirit = UIImage(named: "Spirit")!
     
     public init(
         attributes: [ImageViewAttributes : Any]? = [ImageViewAttributes : Any](),

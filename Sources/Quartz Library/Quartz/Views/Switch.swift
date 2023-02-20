@@ -23,7 +23,7 @@ public class Switch : UISwitch {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
-    let image = UIImage(named: "Spirit")!
+//    let image = UIImage(named: "Spirit")!
     
     public init(
         attributes: [SwitchAttributes : Any]? = [SwitchAttributes : Any](),

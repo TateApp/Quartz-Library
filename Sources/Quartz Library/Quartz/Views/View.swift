@@ -24,7 +24,7 @@ public class View : UIView {
     public var _height : CGFloat = 0
     
     
-    let image = UIImage(named: "Spirit")!
+//    let image = UIImage(named: "Spirit")!
     
     public init(
         attributes: [ViewAttributes : Any]? = [ViewAttributes : Any](),
