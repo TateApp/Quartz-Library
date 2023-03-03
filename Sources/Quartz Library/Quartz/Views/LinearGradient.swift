@@ -1,10 +1,10 @@
 //
-import QuartzCore 
+import QuartzCore
  
  
 import UIKit
 
-public enum ViewAttributes {
+public enum LinearGradientAttributes {
     
     
     case backgroundColor
@@ -16,7 +16,7 @@ public enum ViewAttributes {
     case shadowRadius
     case alpha
 }
-public class View : UIView {
+public class LinearGradient : UIView {
     
     public var widthConstraint = NSLayoutConstraint()
     public var heightConstraint = NSLayoutConstraint()
@@ -24,11 +24,15 @@ public class View : UIView {
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     
-    
 //    let image = UIImage(named: "Spirit")!
     
     public init(
-        attributes: [ViewAttributes : Any]? = [ViewAttributes : Any](),
+        attributes: [LinearGradientAttributes : Any]? = [LinearGradientAttributes : Any](),
+        
+        colors: [UIColor]? = nil,
+        locations: [NSNumber]? = nil,
+        startPoint: CGPoint? = nil,
+        endPoint: CGPoint? = nil,
         //MARK: - View
         _width: CGFloat? = nil,
         _height: CGFloat? = nil,
@@ -45,6 +49,23 @@ public class View : UIView {
         super.init(frame: .zero)
         
        
+        
+        if let _layer = self.layer as? CAGradientLayer {
+            if let _colors = colors  {
+                _layer.colors = _colors
+            }
+            if let _locations = locations  {
+                _layer.locations = _locations
+            }
+            if let _startPoint = startPoint  {
+                _layer.startPoint = _startPoint
+            }
+            if let _endPoint = endPoint  {
+                _layer.endPoint = _endPoint
+            }
+        }
+       
+        
         
         
 
@@ -103,7 +124,10 @@ public class View : UIView {
         
     }
     
-    public func setAttributes(attributes: [ViewAttributes :Any]) {
+    override public class var layerClass: AnyClass {
+        return CAGradientLayer.self
+    }
+    public func setAttributes(attributes: [LinearGradientAttributes :Any]) {
         
         for attribute in attributes.keys {
             

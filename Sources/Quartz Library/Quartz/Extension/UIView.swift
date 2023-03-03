@@ -1,3 +1,4 @@
+//
 import QuartzCore 
  
  
@@ -46,7 +47,26 @@ extension UIView {
       
         
     }
-    
+    public func topOf(view: UIView, constant: CGFloat = 0) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        self.bottomAnchor.constraint(equalTo: view.topAnchor, constant: constant).isActive = true
+    }
+    public func leftOf(view: UIView, constant: CGFloat = 0) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: constant).isActive = true
+    }
+    public func rightOf(view: UIView, constant: CGFloat = 0) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        self.leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: constant).isActive = true
+    }
+    public func bottomOf(view: UIView, constant: CGFloat = 0) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        self.topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant).isActive = true
+    }
     public func getViewType(view: UIView) -> ViewType {
         
         if view.tag == 100 {
