@@ -7,6 +7,12 @@ import UIKit
 
 extension UIView {
     
+    public func X() -> NSLayoutXAxisAnchor {
+        return self.centerXAnchor
+    }
+    public func Y() -> NSLayoutYAxisAnchor {
+        return self.centerYAnchor
+    }
     public func top()-> NSLayoutYAxisAnchor {
         return self.topAnchor
     }
