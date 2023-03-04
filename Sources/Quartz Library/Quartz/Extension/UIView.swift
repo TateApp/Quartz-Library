@@ -7,16 +7,18 @@ import UIKit
 
 extension UIView {
     
-    func top()-> NSLayoutYAxisAnchor {
+    public func top()-> NSLayoutYAxisAnchor {
         return self.topAnchor
     }
-    func left()-> NSLayoutXAxisAnchor {
+    
+    public func left()-> NSLayoutXAxisAnchor {
         return self.leadingAnchor
     }
-    func right()-> NSLayoutXAxisAnchor {
+    public func right()-> NSLayoutXAxisAnchor {
         return self.trailingAnchor
     }
-    func bottom()-> NSLayoutXAxisAnchor {
+    
+    public func bottom()-> NSLayoutXAxisAnchor {
         return self.trailingAnchor
     }
     public func max() {
