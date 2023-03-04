@@ -3,8 +3,11 @@ import QuartzCore
 import UIKit
 
 extension NSLayoutXAxisAnchor {
-    public func to(anchor: NSLayoutXAxisAnchor, constant: CGFloat) {
-        self.constraint(equalTo: anchor, constant: constant).isActive = true
+    public func to(anchor: NSLayoutXAxisAnchor, constant: CGFloat? = 0) {
+        if let _constant = constant {
+            self.constraint(equalTo: anchor, constant: _constant).isActive = true
+        }
+       
     }
 }
 
