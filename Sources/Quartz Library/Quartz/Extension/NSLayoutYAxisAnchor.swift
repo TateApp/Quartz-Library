@@ -4,7 +4,7 @@ import UIKit
 
 extension NSLayoutYAxisAnchor {
     func to(anchor: NSLayoutYAxisAnchor, constant: CGFloat) {
-        self.constraint(equalTo: anchor, constant: constant)
+        self.constraint(equalTo: anchor, constant: constant).isActive = true
     }
 }
 
