@@ -6,8 +6,11 @@ import UIKit
 
 
 public class HStack : UIStackView {
+    
     public var views = [UIView]()
+    
     public var type : HStackType = .equalSpacing
+    
     public var _width : CGFloat = 0
     public var _height : CGFloat = 0
     public var widthType: WidthType = .superView
