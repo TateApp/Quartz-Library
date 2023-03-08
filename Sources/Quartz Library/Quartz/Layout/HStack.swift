@@ -12,8 +12,11 @@ public class HStack : UIStackView {
     public var type : HStackType = .equalSpacing
     
     public var _width : CGFloat = 0
+    
     public var _height : CGFloat = 0
+    
     public var widthType: WidthType = .superView
+    
     public init(
         type : HStackType,
         widthType: WidthType = .superView,

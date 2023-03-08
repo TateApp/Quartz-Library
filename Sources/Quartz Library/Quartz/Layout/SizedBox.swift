@@ -10,7 +10,9 @@ public class SizedBox : UIView {
     let label = UILabel()
     
     public var _width : CGFloat = 0
+    
     public var _height : CGFloat = 0
+    
     public init(
         _width: CGFloat = 20,
         _height: CGFloat = 20

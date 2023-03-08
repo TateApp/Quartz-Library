@@ -50,20 +50,20 @@ extension UIView {
         
     }
     public func width(width: CGFloat) {
-        if let superView = self.superview {
+        
             self.translatesAutoresizingMaskIntoConstraints = false
             
             self.widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
+        
       
         
     }
     public func height(height: CGFloat) {
-        if let superView = self.superview {
+        
             self.translatesAutoresizingMaskIntoConstraints = false
             
             self.heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
+        
       
         
     }
