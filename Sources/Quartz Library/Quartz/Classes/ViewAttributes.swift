@@ -5,7 +5,8 @@ import UIKit
 
 public enum ViewAttributes {
     
-    
+    case width
+    case height
     case backgroundColor
     case borderColor
     case borderWidth

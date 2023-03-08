@@ -97,7 +97,18 @@ public class View : UIView {
         for attribute in attributes.keys {
             
             switch attribute {
-        
+            case .width:
+                let value = attributes[attribute] as! Int
+                
+                self.translatesAutoresizingMaskIntoConstraints = false
+                self.width(width: CGFloat(value))
+              
+            case .height:
+                let value = attributes[attribute] as! Int
+                
+                self.translatesAutoresizingMaskIntoConstraints = false
+                self.height(height: CGFloat(value))
+              
             case .backgroundColor:
                 self.backgroundColor = attributes[attribute] as? UIColor
             case .borderColor:
@@ -120,6 +131,7 @@ public class View : UIView {
                 self.layer.shadowRadius = attributes[attribute] as! CGFloat
             case .alpha:
                 self.alpha = attributes[attribute] as! CGFloat
+          
             }
         }
     }
