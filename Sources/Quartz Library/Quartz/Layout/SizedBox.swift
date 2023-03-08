@@ -21,17 +21,20 @@ public class SizedBox : UIView {
         self._width = _width
         self._height = _height
         
-        
-        
         self.translatesAutoresizingMaskIntoConstraints = false
+        
         self.widthAnchor.constraint(equalToConstant: _width).isActive = true
+        
         self.heightAnchor.constraint(equalToConstant: _height).isActive = true
         
         if Quartz.shared.mode == .production {
             
         } else {
+            
             self.layer.borderWidth = 1
+            
             self.layer.borderColor = UIColor.blue.cgColor
+            
         }
    
        
@@ -48,51 +51,7 @@ public class SizedBox : UIView {
 }
 
 
-public class StackSizedBox : UIView {
-    
-    let label = UIView()
-    
-    public var _width : CGFloat = 0
-    public var _height : CGFloat = 0
-    public init(
-        _width: CGFloat = 20,
-        _height: CGFloat = 20
-    ) {
-        
-        super.init(frame: .zero)
-        
-        self._width = _width
-        self._height = _height
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        self.widthAnchor.constraint(equalToConstant: _width).isActive = true
-        self.heightAnchor.constraint(equalToConstant: _height).isActive = true
-        
-   
-        self.addSubview(label)
-        label.max()
-//        if Quartz.shared.mode == .production {
-//            self.addSubview(label)
-//            label.max()
-//
-//       
-//            
-//        } else {
-//         
-//        }
-//   
-//        
-//      
-        
-        
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
+
 
 //I sought those two black eyes everywhere. When my teacher or my brother rebuked me or were unkind, I sought help every day in the sweetness of those two black eyes. In the harbor of those two black eyes, I sought refuge. She died. I cried, and I sought in the stars, In the darkness of the night for those two black eyes, But I found them not.
 //Many other black eyes shone upon my childhood. But they were not those two black eyes which I had loved. In the stillness of the forest and the darkness of the night I used to watch under the stars, Watching in the darkness, Looking for those two angelic, Unapproachable black eyes, But I found them not.

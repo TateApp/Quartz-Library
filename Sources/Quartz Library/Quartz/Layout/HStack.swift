@@ -4,18 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum HStackType {
-    case equalSpacing
-    case pushLeft
-    case pushRight
-    case manual
-}
-public enum WidthType {
-    case fit
-    case superView
-    case value
-    
-}
+
 public class HStack : UIStackView {
     public var views = [UIView]()
     public var type : HStackType = .equalSpacing

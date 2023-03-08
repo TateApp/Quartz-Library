@@ -3,18 +3,7 @@ import QuartzCore
 
  
 import UIKit
-public enum SearchBarAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class SearchBar : UISearchBar {
     
     public var widthConstraint = NSLayoutConstraint()

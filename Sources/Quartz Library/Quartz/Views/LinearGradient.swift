@@ -4,18 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum LinearGradientAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class LinearGradient : UIView {
     
     public var widthConstraint = NSLayoutConstraint()
@@ -51,6 +40,8 @@ public class LinearGradient : UIView {
        
         
         if let _layer = self.layer as? CAGradientLayer {
+            
+            
             if let _colors = colors  {
                 _layer.colors = _colors
             }
@@ -63,6 +54,8 @@ public class LinearGradient : UIView {
             if let _endPoint = endPoint  {
                 _layer.endPoint = _endPoint
             }
+            
+            
         }
        
         

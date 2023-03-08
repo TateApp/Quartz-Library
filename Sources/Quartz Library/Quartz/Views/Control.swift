@@ -4,18 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum ControlAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class Control : UIControl {
     
     public var widthConstraint = NSLayoutConstraint()

@@ -3,21 +3,7 @@ import QuartzCore
 
  
 import UIKit
-public enum ButtonAttributes {
-    
-    case setTitle
-    case setTitleColor
-    case setTitleShadowColor
-    case setImage
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class Button : UIButton {
     
     public var widthConstraint = NSLayoutConstraint()

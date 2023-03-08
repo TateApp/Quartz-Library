@@ -4,19 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum FlowLayoutAttributes {
-    
-    
-    case estimatedItemSize
-    case footerReferenceSize
-    case headerReferenceSize
-    case itemSize
-    case minimumInteritemSpacing
-    case minimumLineSpacing
-    case scrollDirection
-    
 
-}
 public class FlowLayout : UICollectionViewFlowLayout {
     
 //    let image = UIImage(named: "Spirit")!

@@ -4,18 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum SliderAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class Slider : UISlider {
     
     public var widthConstraint = NSLayoutConstraint()

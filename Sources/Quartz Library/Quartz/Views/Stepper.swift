@@ -4,18 +4,6 @@ import QuartzCore
  
 import UIKit
 
-public enum StepperAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
 public class Stepper : UIStepper {
     
     public var widthConstraint = NSLayoutConstraint()

@@ -3,18 +3,7 @@ import QuartzCore
 
  
 import UIKit
-public enum LabelAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class Label : UILabel {
     
     public var widthConstraint = NSLayoutConstraint()

@@ -1,22 +1,8 @@
 //
 import QuartzCore 
  
- 
 import UIKit
 
-
-public enum VStackType {
-    case equalSpacing
-    case pushUp
-    case pushDown
-    case manual
-}
-public enum HeightType {
-    case fit
-    case superView
-    case value
-    
-}
 public class VStack : UIStackView {
     
     public var views = [UIView]()

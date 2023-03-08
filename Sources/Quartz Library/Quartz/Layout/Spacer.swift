@@ -6,12 +6,8 @@ import UIKit
 
 public class Spacer : UIView {
 
-    
-    
     public init() {
         super.init(frame: .zero)
-        
-        
         
             self.translatesAutoresizingMaskIntoConstraints = false
             self.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true

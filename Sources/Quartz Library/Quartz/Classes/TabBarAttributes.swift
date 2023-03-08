@@ -1,96 +1,24 @@
 //
-import QuartzCore 
+import QuartzCore
 
  
 import UIKit
 
-public class ProgressView : UIProgressView {
-    
-    public var widthConstraint = NSLayoutConstraint()
-    public var heightConstraint = NSLayoutConstraint()
-    
-    public var _width : CGFloat = 0
-    public var _height : CGFloat = 0
-    
-//    let image = UIImage(named: "Spirit")!
-    
-    public init(
-        attributes: [ProgressViewAttributes : Any]? = [ProgressViewAttributes : Any](),
-        //MARK: - View
-        _width: CGFloat? = nil,
-        _height: CGFloat? = nil,
-        _backgroundColor : UIColor? = nil,
-        _borderColor : UIColor? = nil,
-        _borderWidth: CGFloat? = nil,
-        _cornerRadius: CGFloat? = nil,
-        _shadowColor: UIColor? = nil,
-        _shadowOpacity: CGFloat? = nil,
-        _shadowRadius: CGFloat? = nil,
-        _alpha: CGFloat? = 1.0
-    ) {
-        
-        super.init(frame: .zero)
-    
 
-        
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        if let theWidth = _width {
-            
-            self._width = theWidth
-            self.widthAnchor.constraint(equalToConstant: theWidth).isActive = true
-            
-        }
-      
-        if let theHeight = _height {
-            
-            self._height = theHeight
-            self.heightAnchor.constraint(equalToConstant: theHeight).isActive = true
-            
-        }
-      
-      
-      
-        
-        
-        if let _backgroundColor = _backgroundColor {
-            self.backgroundColor = _backgroundColor
-        }
-        if let _borderColor = _borderColor {
-            self.backgroundColor = _borderColor
-        }
-        if let _borderWidth = _borderWidth {
-            self.layer.borderWidth = _borderWidth
-        }
-        if let _cornerRadius = _cornerRadius {
-            self.layer.cornerRadius = _cornerRadius
-        }
-        if let _shadowColor = _shadowColor {
-            self.layer.shadowColor = _shadowColor.cgColor
-        }
-        if let _shadowOpacity = _shadowOpacity {
-            self.layer.shadowOpacity = Float(_shadowOpacity)
-        }
-        if let _shadowRadius = _shadowRadius {
-            self.layer.shadowRadius = _shadowRadius
-        }
-        if let _alpha = _alpha {
-            self.alpha = _alpha
-        }
-        
-        
-        self.tag = 103
-        
-    }
+
+public enum TabBarAttributes {
     
     
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+    case backgroundColor
+    case borderColor
+    case borderWidth
+    case cornerRadius
+    case shadowColor
+    case shadowOpacity
+    case shadowRadius
+    case alpha
 }
-
+//MARK: -
 //I sought those two black eyes everywhere. When my teacher or my brother rebuked me or were unkind, I sought help every day in the sweetness of those two black eyes. In the harbor of those two black eyes, I sought refuge. She died. I cried, and I sought in the stars, In the darkness of the night for those two black eyes, But I found them not.
 //Many other black eyes shone upon my childhood. But they were not those two black eyes which I had loved. In the stillness of the forest and the darkness of the night I used to watch under the stars, Watching in the darkness, Looking for those two angelic, Unapproachable black eyes, But I found them not.
 //Now that my mind is awakened, I see Those two black eyes everywhere. In the eyes of the Divine Mother I have found my own mother. In the love of the Divine Mother I have found my mother’s love.

@@ -3,18 +3,7 @@ import QuartzCore
 
  
 import UIKit
-public enum ImageViewAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class ImageView : UIImageView {
     
     public var widthConstraint = NSLayoutConstraint()

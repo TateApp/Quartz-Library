@@ -4,18 +4,7 @@ import QuartzCore
  
 import UIKit
 
-public enum TabBarAttributes {
-    
-    
-    case backgroundColor
-    case borderColor
-    case borderWidth
-    case cornerRadius
-    case shadowColor
-    case shadowOpacity
-    case shadowRadius
-    case alpha
-}
+
 public class TabBar : UITabBar {
     
     public var widthConstraint = NSLayoutConstraint()
